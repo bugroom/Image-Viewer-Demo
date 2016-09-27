@@ -30,6 +30,15 @@
     [self myTableView];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"userImageData"];
+    if (data) {
+        [_myHeaderImageButton setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+    }else
+        [_myHeaderImageButton setBackgroundImage:[UIImage imageNamed:@"defaultHeaderImage"] forState:UIControlStateNormal];
+}
 
 - (UITableView *)myTableView
 {
@@ -59,9 +68,11 @@
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 80)];
     
     UIButton *myHeaderImageButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _myHeaderImageButton = myHeaderImageButton;
     myHeaderImageButton.frame = CGRectMake(20, view.frame.size.height/2 - buttonHeight/2, buttonWidth, buttonHeight);
-    if ([[NSUserDefaults standardUserDefaults] valueForKey:@"userIcon"]) {
-        [myHeaderImageButton setBackgroundImage:[[NSUserDefaults standardUserDefaults] valueForKey:@"userIcon"] forState:UIControlStateNormal];
+    NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"userImageData"];
+    if (data) {
+        [myHeaderImageButton setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
     }else
     [myHeaderImageButton setBackgroundImage:[UIImage imageNamed:@"defaultHeaderImage"] forState:UIControlStateNormal];
     myHeaderImageButton.layer.cornerRadius = buttonWidth/2;

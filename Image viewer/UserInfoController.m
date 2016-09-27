@@ -17,6 +17,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.headerImageButton.layer.cornerRadius = 75;
+    NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"userImageData"];
+    [_headerImageButton setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
 
  
 }
@@ -127,7 +129,16 @@
 #endif
     //获取编辑后的图片
     UIImage *editImage = info[UIImagePickerControllerEditedImage];
-    //[[NSUserDefaults standardUserDefaults] setObject:editImage forKey:@"userIcon"];
+    NSData *data = nil;
+    if (UIImagePNGRepresentation(editImage) == nil) {
+        
+        data = UIImageJPEGRepresentation(editImage, 1);
+        
+    } else {
+        
+        data = UIImagePNGRepresentation(editImage);
+    }
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"userImageData"];
     //修改头像
     [_headerImageButton setBackgroundImage:editImage forState:UIControlStateNormal];
     
@@ -141,14 +152,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
