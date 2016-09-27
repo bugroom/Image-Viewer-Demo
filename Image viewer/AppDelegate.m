@@ -2,12 +2,12 @@
 //  AppDelegate.m
 //  Image viewer
 //
-//  Created by QF on 2016/9/25.
+//  Created by ZC on 2016/9/25.
 //  Copyright © 2016年 zc. All rights reserved.
 //
 
 #import "AppDelegate.h"
-
+#import "ViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,11 +16,30 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    [self creatNaviongationController];
     return YES;
 }
 
+- (void)creatNaviongationController
+{
+    ViewController *vc = [[ViewController alloc]init];
+    vc.title = @"哈哈哈哈哈";
+    vc.automaticallyAdjustsScrollViewInsets = NO;
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+    self.window.rootViewController = nav;
+    
+}
 
+- (NSUInteger)supportedInterfaceOrientations {
+    
+    return NO;
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation {
+    return  UIInterfaceOrientationPortrait;
+    
+}
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
