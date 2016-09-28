@@ -25,8 +25,7 @@
 -(void)loadView
 {
     [super loadView];
-//    self.navigationController.fd_fullscreenPopGestureRecognizer.enabled = NO;
-//    self.fd_interactivePopDisabled = YES;
+
     self.fd_prefersNavigationBarHidden = NO;
     
     MBProgressHUD *hub = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
