@@ -13,6 +13,7 @@
 #import "MeViewController.h"
 #import "SearchViewController.h"
 #import "MBProgressHUD.h"
+#import "UINavigationController+FDFullscreenPopGesture.h"
 @interface ViewController () <ZCScrollViewDelegate,UISearchBarDelegate,MBProgressHUDDelegate>
 
 @property (nonatomic, strong) NSMutableArray *searchResultArray;
@@ -24,6 +25,9 @@
 -(void)loadView
 {
     [super loadView];
+//    self.navigationController.fd_fullscreenPopGestureRecognizer.enabled = NO;
+//    self.fd_interactivePopDisabled = YES;
+    self.fd_prefersNavigationBarHidden = NO;
     
     MBProgressHUD *hub = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     hub.label.text = @"正在加载";

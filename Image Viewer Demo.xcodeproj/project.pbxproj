@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		594E3FC51D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 594E3FC41D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.m */; };
 		59857D2D1D9A105300EE8836 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59857D2C1D9A105300EE8836 /* SearchViewController.m */; };
 		59857D361D9A1B4300EE8836 /* SearchPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59857D351D9A1B4300EE8836 /* SearchPreviewController.m */; };
 		59857D451D9A221900EE8836 /* SearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59857D441D9A221900EE8836 /* SearchResultController.m */; };
@@ -93,6 +94,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		594E3FC31D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
+		594E3FC41D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		59857D2B1D9A105300EE8836 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		59857D2C1D9A105300EE8836 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		59857D341D9A1B4300EE8836 /* SearchPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPreviewController.h; sourceTree = "<group>"; };
@@ -274,6 +277,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		594E3FC21D9BE0550094E6C5 /* FDFullscreenPopGesture */ = {
+			isa = PBXGroup;
+			children = (
+				594E3FC31D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.h */,
+				594E3FC41D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.m */,
+			);
+			path = FDFullscreenPopGesture;
+			sourceTree = "<group>";
+		};
 		59857D461D9A4A7600EE8836 /* category */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +429,7 @@
 		B026CA8F1D97BC3900B08509 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				594E3FC21D9BE0550094E6C5 /* FDFullscreenPopGesture */,
 				59A2CFC31D9B5688001DD8F0 /* Masonry */,
 				B026CB791D9925DA00B08509 /* MBProgressHUD */,
 				B026CB261D97BD3E00B08509 /* CHTCollectionViewWaterfallLayout */,
@@ -749,6 +762,7 @@
 				B026CA721D977C6A00B08509 /* ViewController.m in Sources */,
 				B026CB121D97BC6D00B08509 /* SDPhotoBrowser.m in Sources */,
 				59857D531D9A4FEB00EE8836 /* MBProgressHUD+Manager.m in Sources */,
+				594E3FC51D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				59A2CFE21D9B5688001DD8F0 /* MASViewConstraint.m in Sources */,
 				B026CB211D97BC6D00B08509 /* UIImageView+HighlightedWebCache.m in Sources */,
 				B026CB1E1D97BC6D00B08509 /* UIImage+GIF.m in Sources */,
