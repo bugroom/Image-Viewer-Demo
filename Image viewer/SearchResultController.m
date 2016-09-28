@@ -53,4 +53,10 @@
     return _pictureFlowView;
 }
 
+
+-(void)dealloc
+{
+    NSLog(@"SearchResultController dealloc");
+}
+
 @end

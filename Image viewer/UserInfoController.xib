@@ -20,6 +20,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurluan" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-2L-zr0"/>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="77p-Uk-ZgC">
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -41,30 +42,35 @@
                         <constraint firstAttribute="height" constant="150" id="86j-QW-Xrf"/>
                         <constraint firstAttribute="width" constant="150" id="swe-Y7-HiE"/>
                     </constraints>
-                    <state key="normal" backgroundImage="defaultHeaderImage"/>
+                    <state key="normal" image="defaultHeaderImage"/>
                     <connections>
                         <action selector="headerButtonClick:" destination="-1" eventType="touchUpInside" id="ctV-gg-oKe"/>
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="77p-Uk-ZgC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="0Dw-as-xlz"/>
+                <constraint firstItem="L4j-2L-zr0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0u3-nu-o8O"/>
                 <constraint firstAttribute="trailing" secondItem="77p-Uk-ZgC" secondAttribute="trailing" constant="16" id="8nA-fN-YHv"/>
                 <constraint firstItem="x1n-bD-HbE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="DIv-A8-ncq"/>
                 <constraint firstAttribute="trailing" secondItem="Ja1-kS-T9b" secondAttribute="trailing" constant="16" id="DhJ-jW-97l"/>
                 <constraint firstItem="Mfo-2N-M0I" firstAttribute="top" secondItem="Ja1-kS-T9b" secondAttribute="bottom" constant="32" id="GM5-fe-X2U"/>
                 <constraint firstAttribute="trailing" secondItem="Mfo-2N-M0I" secondAttribute="trailing" constant="165" id="MiT-j2-vvF"/>
+                <constraint firstAttribute="bottom" secondItem="L4j-2L-zr0" secondAttribute="bottom" id="NYF-XW-q8R"/>
                 <constraint firstItem="x1n-bD-HbE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RRC-ac-C1e"/>
                 <constraint firstItem="Ja1-kS-T9b" firstAttribute="top" secondItem="77p-Uk-ZgC" secondAttribute="bottom" constant="31" id="XOf-fT-TC4"/>
                 <constraint firstItem="Ja1-kS-T9b" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="XT2-Zy-6Nr"/>
                 <constraint firstItem="77p-Uk-ZgC" firstAttribute="top" secondItem="x1n-bD-HbE" secondAttribute="bottom" constant="41" id="bLX-ka-zKb"/>
+                <constraint firstItem="L4j-2L-zr0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="e4F-e9-DjL"/>
                 <constraint firstItem="Mfo-2N-M0I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="164" id="p4n-8F-JVo"/>
+                <constraint firstAttribute="trailing" secondItem="L4j-2L-zr0" secondAttribute="trailing" id="ziz-LC-mb1"/>
             </constraints>
             <point key="canvasLocation" x="-146.5" y="26.5"/>
         </view>
     </objects>
     <resources>
+        <image name="blurluan" width="580" height="1030"/>
         <image name="defaultHeaderImage" width="200" height="200"/>
     </resources>
 </document>

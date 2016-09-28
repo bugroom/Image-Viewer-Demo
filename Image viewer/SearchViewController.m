@@ -65,6 +65,8 @@
     
 }
 
+
+
 - (void)requestDataFromeNetorking:(NSString *)urlStr
 {
     [[AFHTTPSessionManager manager] GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -99,8 +101,10 @@
 {
     if (!_searchController) {
         SearchPreviewController *searchPreviewController = [[SearchPreviewController alloc]init];
+        __weak SearchViewController *weakSelf = self;
         searchPreviewController.backToLastController = ^(SearchResultController *vc){
-            [self.navigationController pushViewController:vc animated:YES];
+            
+            [weakSelf.navigationController pushViewController:vc animated:YES];
         };
         _searchPreviewController = searchPreviewController;
         _searchController = [[UISearchController alloc]initWithSearchResultsController:searchPreviewController];
@@ -128,6 +132,15 @@
         collectionView.backgroundColor = [UIColor whiteColor];
         collectionView.delegate = self;
         collectionView.dataSource = self;
+        
+        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+        UIVisualEffectView *visuaEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"backgroundView6"]];
+        imageView.contentMode = UIViewContentModeScaleAspectFill;
+        visuaEffectView.frame = imageView.frame = self.view.frame;
+        
+        [imageView addSubview:visuaEffectView];
+        collectionView.backgroundView = imageView;
         
         [self.view addSubview:collectionView];
         
@@ -349,6 +362,11 @@
         _pinyinHistoryArray = [self converToPinyin:self.historyArray];
     }
     return _pinyinHistoryArray;
+}
+
+-(void)dealloc
+{
+    NSLog(@"SearchViewController dealloc");
 }
 
 @end

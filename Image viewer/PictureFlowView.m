@@ -149,6 +149,14 @@
             
         }
         
+//        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+//        UIVisualEffectView *visuaEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
+//        UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"backgroundView6"]];
+//        imageView.contentMode = UIViewContentModeScaleAspectFill;
+//        visuaEffectView.frame = imageView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 600);
+//        
+//        [imageView addSubview:visuaEffectView];
+//        collectionView.backgroundView = imageView;
         
         collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             _currentPage = 0;

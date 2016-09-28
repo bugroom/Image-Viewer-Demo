@@ -14,13 +14,13 @@
 
 @implementation UserInfoController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.headerImageButton.layer.cornerRadius = 75;
+    self.headerImageButton.backgroundColor = [UIColor clearColor];
     NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"userImageData"];
-    [_headerImageButton setBackgroundImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
-
- 
+    [_headerImageButton setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
 }
 
 - (IBAction)saveButtonClick:(UIButton *)sender
@@ -140,7 +140,7 @@
     }
     [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"userImageData"];
     //修改头像
-    [_headerImageButton setBackgroundImage:editImage forState:UIControlStateNormal];
+    [_headerImageButton setImage:editImage forState:UIControlStateNormal];
     
     //隐藏控制器
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -150,7 +150,12 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+    
 }
 
+-(void)dealloc
+{
+    NSLog(@"UserInfoController dealloc");
+}
 
 @end

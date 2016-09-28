@@ -62,9 +62,9 @@
 
 - (void)creatBarButtonItem
 {
-    UIBarButtonItem *lelfButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"搜索" style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonItemClick)];
-    
-    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"我的" style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonItemClick)];
+
+    UIBarButtonItem *lelfButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"search_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(leftButtonItemClick)];
+    UIBarButtonItem *rightButtonItem = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"user_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(rightButtonItemClick)];
     
     self.navigationItem.leftBarButtonItem = lelfButtonItem;
     self.navigationItem.rightBarButtonItem = rightButtonItem;
@@ -130,5 +130,9 @@
     [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
+-(void)dealloc
+{
+    NSLog(@"ViewController dealloc");
+}
 
 @end

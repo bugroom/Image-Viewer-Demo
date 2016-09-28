@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="126" id="KGk-i7-Jjw" customClass="MeUserInfoCell">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="126"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <frame key="frameInset" width="413" height="126"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultHeaderImage" translatesAutoresizingMaskIntoConstraints="NO" id="6rb-7n-qgE">
+                        <constraints>
+                            <constraint firstAttribute="width" constant="80" id="Lhb-KS-TQP"/>
+                            <constraint firstAttribute="height" constant="80" id="QWp-eD-b0m"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="用户名(点击设置)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n5B-0O-Vqt">
+                        <constraints>
+                            <constraint firstAttribute="height" constant="24" id="wNy-I5-IwN"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="这家伙很懒，什么都没留下" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EIk-Pc-OcF">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="6rb-7n-qgE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="1U1-U0-xtS"/>
+                    <constraint firstItem="n5B-0O-Vqt" firstAttribute="top" secondItem="6rb-7n-qgE" secondAttribute="top" id="EBb-Qf-SCJ"/>
+                    <constraint firstItem="6rb-7n-qgE" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Nk1-mP-3FU"/>
+                    <constraint firstItem="EIk-Pc-OcF" firstAttribute="bottom" secondItem="6rb-7n-qgE" secondAttribute="bottom" id="UeR-in-8ca"/>
+                    <constraint firstItem="EIk-Pc-OcF" firstAttribute="top" secondItem="n5B-0O-Vqt" secondAttribute="bottom" constant="8" id="kKB-Gv-5Im"/>
+                    <constraint firstItem="EIk-Pc-OcF" firstAttribute="leading" secondItem="6rb-7n-qgE" secondAttribute="trailing" constant="15" id="kLH-6n-So5"/>
+                    <constraint firstAttribute="trailing" secondItem="EIk-Pc-OcF" secondAttribute="trailing" constant="15" id="oDd-a4-Yjp"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="n5B-0O-Vqt" secondAttribute="trailing" constant="15" id="w4h-fj-Cuf"/>
+                    <constraint firstItem="n5B-0O-Vqt" firstAttribute="leading" secondItem="6rb-7n-qgE" secondAttribute="trailing" constant="15" id="yAG-zM-rL9"/>
+                </constraints>
+            </tableViewCellContentView>
+            <gestureRecognizers/>
+            <connections>
+                <outlet property="introduceLabel" destination="EIk-Pc-OcF" id="V3t-YQ-bPO"/>
+                <outlet property="myHeaderImageView" destination="6rb-7n-qgE" id="JUZ-dH-6S1"/>
+                <outlet property="userNameLabel" destination="n5B-0O-Vqt" id="Gm3-2D-0yE"/>
+                <outletCollection property="gestureRecognizers" destination="vat-JY-fNe" appends="YES" id="S5b-K8-JJf"/>
+            </connections>
+            <point key="canvasLocation" x="-388.5" y="-116"/>
+        </tableViewCell>
+        <tapGestureRecognizer id="vat-JY-fNe">
+            <connections>
+                <action selector="userHeaderClick:" destination="KGk-i7-Jjw" id="6nG-l8-z1f"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="defaultHeaderImage" width="200" height="200"/>
+    </resources>
+</document>
