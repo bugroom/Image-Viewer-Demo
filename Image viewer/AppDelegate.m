@@ -24,7 +24,7 @@
 - (void)creatNaviongationController
 {
     ViewController *vc = [[ViewController alloc]init];
-    vc.title = @"哈哈哈哈哈";
+    vc.title = @"简图";
     vc.automaticallyAdjustsScrollViewInsets = NO;
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
     self.window.rootViewController = nav;

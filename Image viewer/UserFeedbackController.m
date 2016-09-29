@@ -10,10 +10,13 @@
 #import "Masonry.h"
 #import "Config.h"
 #import "SVProgressHUD.h"
+#import "Reachability.h"
 @interface UserFeedbackController () <UITextViewDelegate>
 {
     UITextView *_textView;
     UILabel *_label;
+    Reachability *_reach;
+
 }
 @end
 
@@ -60,12 +63,7 @@
 - (void)sendClick
 {
     if (_textView.text.length >0) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(arc4random() % 10 / 10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [SVProgressHUD setMinimumDismissTimeInterval:1];
-            [SVProgressHUD showSuccessWithStatus:@"发送成功"];
-            
-        });
-        [self.navigationController popViewControllerAnimated:YES];
+        [self networkingTest];
     }else
     {
         [SVProgressHUD setMinimumDismissTimeInterval:1];
@@ -74,6 +72,46 @@
     
 }
 
+- (void)networkingTest
+{
+    Reachability* reach = [Reachability reachabilityWithHostname:@"www.baidu.com"];
+    
+    
+    reach.reachableBlock = ^(Reachability*reach)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self networkingSuccessAlert];
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability*reach)
+    {
+        [self networkingErrorAlert];
+    };
+    
+    
+    [reach startNotifier];
+    _reach = reach;
+}
+
+- (void)networkingSuccessAlert
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(arc4random() % 10 / 10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD setMinimumDismissTimeInterval:1];
+        [SVProgressHUD showSuccessWithStatus:@"发送成功"];
+        
+    });
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [_reach stopNotifier];
+}
+
+- (void)networkingErrorAlert
+{
+    [SVProgressHUD setMinimumDismissTimeInterval:1];
+    [SVProgressHUD showErrorWithStatus:@"发送失败，请检查网络"];
+    [_reach stopNotifier];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

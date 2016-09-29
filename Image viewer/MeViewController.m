@@ -150,7 +150,6 @@
     }
     cell.imageView.image = [UIImage imageNamed:@"baidu_wallet_bsc"];
     cell.textLabel.text = _datasourceArray[indexPath.row];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     cell.backgroundColor = [UIColor clearColor];
     if (indexPath.row == 0) {
@@ -179,9 +178,6 @@
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
-    
-    
-    
     return cell;
 }
 
@@ -202,6 +198,8 @@
         UserFeedbackController *userFeedbackController = [[UserFeedbackController alloc]init];
         [self.navigationController pushViewController:userFeedbackController animated:YES];
     }
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

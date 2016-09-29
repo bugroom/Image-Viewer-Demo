@@ -42,6 +42,7 @@
 		622C4DC01D98167C00364A8E /* ClassFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 622C4DBE1D98167C00364A8E /* ClassFlowCell.m */; };
 		622C4DC11D98167C00364A8E /* ClassFlowCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 622C4DBF1D98167C00364A8E /* ClassFlowCell.xib */; };
 		622C4DC41D982BD200364A8E /* ClassViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 622C4DC31D982BD200364A8E /* ClassViewController.m */; };
+		6233E2591D9D590B000D42E1 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 6233E2581D9D590B000D42E1 /* Reachability.m */; };
 		B026CA6C1D977C6A00B08509 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B026CA6B1D977C6A00B08509 /* main.m */; };
 		B026CA6F1D977C6A00B08509 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B026CA6E1D977C6A00B08509 /* AppDelegate.m */; };
 		B026CA721D977C6A00B08509 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B026CA711D977C6A00B08509 /* ViewController.m */; };
@@ -178,6 +179,8 @@
 		622C4DBF1D98167C00364A8E /* ClassFlowCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ClassFlowCell.xib; sourceTree = "<group>"; };
 		622C4DC21D982BD200364A8E /* ClassViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassViewController.h; sourceTree = "<group>"; };
 		622C4DC31D982BD200364A8E /* ClassViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassViewController.m; sourceTree = "<group>"; };
+		6233E2571D9D590B000D42E1 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		6233E2581D9D590B000D42E1 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		B026CA671D977C6A00B08509 /* Image Viewer Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Image Viewer Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B026CA6B1D977C6A00B08509 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B026CA6D1D977C6A00B08509 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -319,10 +322,10 @@
 				59857D541D9A9BF200EE8836 /* UserInfoController.h */,
 				59857D551D9A9BF200EE8836 /* UserInfoController.m */,
 				59857D561D9A9BF200EE8836 /* UserInfoController.xib */,
-				59324B2F1D9D358D00101394 /* UserFeedbackController.h */,
-				59324B301D9D358D00101394 /* UserFeedbackController.m */,
 				59324B371D9D3F6F00101394 /* SatisfactionController.h */,
 				59324B381D9D3F6F00101394 /* SatisfactionController.m */,
+				59324B2F1D9D358D00101394 /* UserFeedbackController.h */,
+				59324B301D9D358D00101394 /* UserFeedbackController.m */,
 			);
 			name = MeController;
 			sourceTree = "<group>";
@@ -450,6 +453,15 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		6233E25A1D9D5916000D42E1 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				6233E2571D9D590B000D42E1 /* Reachability.h */,
+				6233E2581D9D590B000D42E1 /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		B026CA5E1D977C6A00B08509 = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +520,7 @@
 		B026CA8F1D97BC3900B08509 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				6233E25A1D9D5916000D42E1 /* Reachability */,
 				595763C01D9D06930029A282 /* TMCache */,
 				59F15AEF1D9CA79800583FCE /* SVProgressHUD */,
 				594E3FC21D9BE0550094E6C5 /* FDFullscreenPopGesture */,
@@ -886,6 +899,7 @@
 				59A2CFDF1D9B5688001DD8F0 /* MASConstraintMaker.m in Sources */,
 				B026CB1F1D97BC6D00B08509 /* UIImage+MultiFormat.m in Sources */,
 				B026CB171D97BC6D00B08509 /* SDWebImageCompat.m in Sources */,
+				6233E2591D9D590B000D42E1 /* Reachability.m in Sources */,
 				B026CB011D97BC6D00B08509 /* MJRefreshHeader.m in Sources */,
 				B026CB071D97BC6D00B08509 /* MJRefreshBackStateFooter.m in Sources */,
 				B026CAA11D97BC4900B08509 /* AFURLRequestSerialization.m in Sources */,

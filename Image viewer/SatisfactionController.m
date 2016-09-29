@@ -8,10 +8,12 @@
 
 #import "SatisfactionController.h"
 #import "SVProgressHUD.h"
+#import "Reachability.h"
 @interface SatisfactionController ()
 
 {
     NSInteger _lastSelectRow;
+    Reachability *_reach;
 
 }
 
@@ -25,7 +27,7 @@
     self.title = @"满意度调查";
     self.tableView.rowHeight = 50;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"Cell"];
-    
+    _lastSelectRow = -1;
     UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc]initWithTitle:@"发送" style:UIBarButtonItemStylePlain target:self action:@selector(sendClick)];
     self.navigationItem.rightBarButtonItem = buttonItem;
     
@@ -33,23 +35,56 @@
 
 - (void)sendClick
 {
-    
-    if (_lastSelectRow) {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(arc4random() % 10 / 10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [SVProgressHUD setMinimumDismissTimeInterval:1];
-            [SVProgressHUD showSuccessWithStatus:@"发送成功"];
-            
-        });
-        [self.navigationController popViewControllerAnimated:YES];
-        
+    if (_lastSelectRow >= 0) {
+        [self networkingTest];
     }
-    else{
+    else {
         [SVProgressHUD setMinimumDismissTimeInterval:1];
         [SVProgressHUD showErrorWithStatus:@"请选择后发送"];
     }
     
 }
 
+- (void)networkingTest
+{
+    Reachability* reach = [Reachability reachabilityWithHostname:@"www.baidu.com"];
+    
+    
+    reach.reachableBlock = ^(Reachability*reach)
+    {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self networkingSuccessAlert];
+        });
+    };
+    
+    reach.unreachableBlock = ^(Reachability*reach)
+    {
+        [self networkingErrorAlert];
+    };
+    
+    
+    [reach startNotifier];
+    _reach = reach;
+}
+
+- (void)networkingSuccessAlert
+{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(arc4random() % 10 / 10.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [SVProgressHUD setMinimumDismissTimeInterval:1];
+        [SVProgressHUD showSuccessWithStatus:@"发送成功"];
+        
+    });
+    [self.navigationController popViewControllerAnimated:YES];
+    
+    [_reach stopNotifier];
+}
+
+- (void)networkingErrorAlert
+{
+    [SVProgressHUD setMinimumDismissTimeInterval:1];
+    [SVProgressHUD showErrorWithStatus:@"发送失败，请检查网络"];
+    [_reach stopNotifier];
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -81,7 +116,7 @@
 {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    if (_lastSelectRow) {
+    if (_lastSelectRow >= 0) {
         UITableViewCell *lastSelectCell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:_lastSelectRow inSection:0]];
         lastSelectCell.accessoryType = UITableViewCellAccessoryNone;
     }

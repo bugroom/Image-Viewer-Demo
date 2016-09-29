@@ -268,11 +268,7 @@
     else{
         [_controller.navigationController setNavigationBarHidden:NO animated:YES];
         [_classController.navigationController setNavigationBarHidden:NO animated:YES];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            if (_controller) {
-                _controller.zcScrollView.topTitlebackgroundView.hidden = NO;
-            }
-        });
+        _controller.zcScrollView.topTitlebackgroundView.hidden = NO;
     }
     
     
