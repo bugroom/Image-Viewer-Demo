@@ -15,6 +15,7 @@
 #import "AFNetworking.h"
 #include "MJRefresh.h"
 #import "MBProgressHUD+Manager.h"
+#import "SVProgressHUD.h"
 
 @interface PictureFlowView ()<UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,SDPhotoBrowserDelegate,UIScrollViewDelegate>
 
@@ -23,6 +24,7 @@
     NSString *_urlString;
     ViewController *_controller;
     ClassViewController *_classController;
+    
 
     CGFloat _systemVersion;
 }
@@ -94,13 +96,15 @@
     urlStr = [self stringEncoding:urlStr];
 
     if (!_currentPage) {
-        [MBProgressHUD showHUDAddedTo:self animated:YES title:@"正在刷新" mode:MBProgressHUDModeIndeterminate];
+        //[MBProgressHUD showHUDAddedTo:self animated:YES title:@"正在刷新" mode:MBProgressHUDModeIndeterminate];
+        [SVProgressHUD showWithStatus:@"正在刷新"];
     }
     
     [[AFHTTPSessionManager manager] GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [_collectionView.mj_header endRefreshing];
         [_collectionView.mj_footer endRefreshing];
-        [MBProgressHUD hideHUDForView:self animated:YES];
+        //[MBProgressHUD hideHUDForView:self animated:YES];
+        [SVProgressHUD dismiss];
         [self handleDataObjectWithReponseObject:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [[[UIAlertView alloc]initWithTitle:@"提示" message:@"网络错误" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:@"刷新", nil] show];

@@ -26,6 +26,11 @@
 		59A2CFE61D9B5688001DD8F0 /* ViewController+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2CFDC1D9B5688001DD8F0 /* ViewController+MASAdditions.m */; };
 		59A2CFEA1D9B59A0001DD8F0 /* MeUserInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 59A2CFE81D9B59A0001DD8F0 /* MeUserInfoCell.m */; };
 		59A2CFEB1D9B59A0001DD8F0 /* MeUserInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59A2CFE91D9B59A0001DD8F0 /* MeUserInfoCell.xib */; };
+		59F15AFA1D9CA79800583FCE /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F15AF11D9CA79800583FCE /* SVIndefiniteAnimatedView.m */; };
+		59F15AFB1D9CA79800583FCE /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F15AF31D9CA79800583FCE /* SVProgressAnimatedView.m */; };
+		59F15AFC1D9CA79800583FCE /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 59F15AF51D9CA79800583FCE /* SVProgressHUD.bundle */; };
+		59F15AFD1D9CA79800583FCE /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F15AF71D9CA79800583FCE /* SVProgressHUD.m */; };
+		59F15AFE1D9CA79800583FCE /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59F15AF91D9CA79800583FCE /* SVRadialGradientLayer.m */; };
 		622C4DB31D98089A00364A8E /* PictureFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 622C4DB21D98089A00364A8E /* PictureFlowView.m */; };
 		622C4DBC1D980DA600364A8E /* ClassFlowView.m in Sources */ = {isa = PBXBuildFile; fileRef = 622C4DBB1D980DA600364A8E /* ClassFlowView.m */; };
 		622C4DC01D98167C00364A8E /* ClassFlowCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 622C4DBE1D98167C00364A8E /* ClassFlowCell.m */; };
@@ -135,6 +140,16 @@
 		59A2CFE71D9B59A0001DD8F0 /* MeUserInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeUserInfoCell.h; sourceTree = "<group>"; };
 		59A2CFE81D9B59A0001DD8F0 /* MeUserInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeUserInfoCell.m; sourceTree = "<group>"; };
 		59A2CFE91D9B59A0001DD8F0 /* MeUserInfoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MeUserInfoCell.xib; sourceTree = "<group>"; };
+		59F15AF01D9CA79800583FCE /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		59F15AF11D9CA79800583FCE /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		59F15AF21D9CA79800583FCE /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		59F15AF31D9CA79800583FCE /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		59F15AF41D9CA79800583FCE /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		59F15AF51D9CA79800583FCE /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		59F15AF61D9CA79800583FCE /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		59F15AF71D9CA79800583FCE /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		59F15AF81D9CA79800583FCE /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		59F15AF91D9CA79800583FCE /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
 		622C4DB11D98089A00364A8E /* PictureFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureFlowView.h; sourceTree = "<group>"; };
 		622C4DB21D98089A00364A8E /* PictureFlowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureFlowView.m; sourceTree = "<group>"; };
 		622C4DBA1D980DA600364A8E /* ClassFlowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassFlowView.h; sourceTree = "<group>"; };
@@ -335,6 +350,23 @@
 			path = Masonry;
 			sourceTree = "<group>";
 		};
+		59F15AEF1D9CA79800583FCE /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				59F15AF01D9CA79800583FCE /* SVIndefiniteAnimatedView.h */,
+				59F15AF11D9CA79800583FCE /* SVIndefiniteAnimatedView.m */,
+				59F15AF21D9CA79800583FCE /* SVProgressAnimatedView.h */,
+				59F15AF31D9CA79800583FCE /* SVProgressAnimatedView.m */,
+				59F15AF41D9CA79800583FCE /* SVProgressHUD-Prefix.pch */,
+				59F15AF51D9CA79800583FCE /* SVProgressHUD.bundle */,
+				59F15AF61D9CA79800583FCE /* SVProgressHUD.h */,
+				59F15AF71D9CA79800583FCE /* SVProgressHUD.m */,
+				59F15AF81D9CA79800583FCE /* SVRadialGradientLayer.h */,
+				59F15AF91D9CA79800583FCE /* SVRadialGradientLayer.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		622C4DAC1D97F81300364A8E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,6 +461,7 @@
 		B026CA8F1D97BC3900B08509 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				59F15AEF1D9CA79800583FCE /* SVProgressHUD */,
 				594E3FC21D9BE0550094E6C5 /* FDFullscreenPopGesture */,
 				59A2CFC31D9B5688001DD8F0 /* Masonry */,
 				B026CB791D9925DA00B08509 /* MBProgressHUD */,
@@ -718,6 +751,7 @@
 				B026CA7A1D977C6A00B08509 /* LaunchScreen.storyboard in Resources */,
 				B026CA771D977C6A00B08509 /* Assets.xcassets in Resources */,
 				B026CB311D97BEC500B08509 /* PictureFlowCell.xib in Resources */,
+				59F15AFC1D9CA79800583FCE /* SVProgressHUD.bundle in Resources */,
 				B026CB0B1D97BC6D00B08509 /* MJRefresh.bundle in Resources */,
 				B026CA751D977C6A00B08509 /* Main.storyboard in Resources */,
 				59857D581D9A9BF200EE8836 /* UserInfoController.xib in Resources */,
@@ -756,6 +790,7 @@
 				59A2CFE11D9B5688001DD8F0 /* MASViewAttribute.m in Sources */,
 				B026CB181D97BC6D00B08509 /* SDWebImageDecoder.m in Sources */,
 				59857D2D1D9A105300EE8836 /* SearchViewController.m in Sources */,
+				59F15AFB1D9CA79800583FCE /* SVProgressAnimatedView.m in Sources */,
 				B026CB051D97BC6D00B08509 /* MJRefreshBackGifFooter.m in Sources */,
 				B026CB1B1D97BC6D00B08509 /* SDWebImageManager.m in Sources */,
 				B026CB771D99165500B08509 /* TitleViewCell.m in Sources */,
@@ -766,6 +801,7 @@
 				59A2CFE21D9B5688001DD8F0 /* MASViewConstraint.m in Sources */,
 				B026CB211D97BC6D00B08509 /* UIImageView+HighlightedWebCache.m in Sources */,
 				B026CB1E1D97BC6D00B08509 /* UIImage+GIF.m in Sources */,
+				59F15AFD1D9CA79800583FCE /* SVProgressHUD.m in Sources */,
 				B026CA6F1D977C6A00B08509 /* AppDelegate.m in Sources */,
 				B026CB2C1D97BE0100B08509 /* PictureModel.m in Sources */,
 				B026CAA21D97BC4900B08509 /* AFURLResponseSerialization.m in Sources */,
@@ -789,8 +825,10 @@
 				B026CB131D97BC6D00B08509 /* SDWaitingView.m in Sources */,
 				B026CA6C1D977C6A00B08509 /* main.m in Sources */,
 				B026CB041D97BC6D00B08509 /* MJRefreshAutoStateFooter.m in Sources */,
+				59F15AFE1D9CA79800583FCE /* SVRadialGradientLayer.m in Sources */,
 				B026CB201D97BC6D00B08509 /* UIImage+WebP.m in Sources */,
 				B026CB0A1D97BC6D00B08509 /* MJRefreshStateHeader.m in Sources */,
+				59F15AFA1D9CA79800583FCE /* SVIndefiniteAnimatedView.m in Sources */,
 				B026CA9E1D97BC4900B08509 /* AFHTTPSessionManager.m in Sources */,
 				B026CB1C1D97BC6D00B08509 /* SDWebImagePrefetcher.m in Sources */,
 				59A2CFDF1D9B5688001DD8F0 /* MASConstraintMaker.m in Sources */,

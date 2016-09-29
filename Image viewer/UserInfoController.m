@@ -7,7 +7,7 @@
 //
 
 #import "UserInfoController.h"
-
+#import "SVProgressHUD.h"
 @interface UserInfoController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIAlertViewDelegate>
 
 @end
@@ -26,11 +26,17 @@
 - (IBAction)saveButtonClick:(UIButton *)sender
 {
     if (self.userNameTextField.text.length > 0) {
-        [[[UIAlertView alloc]initWithTitle:@"提醒" message:@"保存成功" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:nil, nil] show];
-        
+        //[[[UIAlertView alloc]initWithTitle:@"提醒" message:@"保存成功" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:nil, nil] show];
+        [SVProgressHUD setMinimumDismissTimeInterval:1.5];
+        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+        [self.navigationController popViewControllerAnimated:YES];
+       
     }
     else {
-        [[[UIAlertView alloc]initWithTitle:@"提醒" message:@"用户名不能为空" delegate:nil cancelButtonTitle:@"返回" otherButtonTitles:nil, nil] show];
+        //[[[UIAlertView alloc]initWithTitle:@"提醒" message:@"用户名不能为空" delegate:nil cancelButtonTitle:@"返回" otherButtonTitles:nil, nil] show];
+        [SVProgressHUD setMinimumDismissTimeInterval:0.8];
+        [SVProgressHUD showErrorWithStatus:@"用户名不能为空"];
+        
     }
     
 
