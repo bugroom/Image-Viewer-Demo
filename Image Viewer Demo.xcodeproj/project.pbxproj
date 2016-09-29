@@ -7,7 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59324B321D9D358D00101394 /* UserFeedbackController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59324B301D9D358D00101394 /* UserFeedbackController.m */; };
+		59324B391D9D3F6F00101394 /* SatisfactionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59324B381D9D3F6F00101394 /* SatisfactionController.m */; };
 		594E3FC51D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = 594E3FC41D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.m */; };
+		595763C81D9D06930029A282 /* TMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 595763C21D9D06930029A282 /* TMCache.m */; };
+		595763C91D9D06930029A282 /* TMDiskCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 595763C51D9D06930029A282 /* TMDiskCache.m */; };
+		595763CA1D9D06930029A282 /* TMMemoryCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 595763C71D9D06930029A282 /* TMMemoryCache.m */; };
+		595763D01D9D11EC0029A282 /* UIView+ZCFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 595763CF1D9D11EC0029A282 /* UIView+ZCFrame.m */; };
 		59857D2D1D9A105300EE8836 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59857D2C1D9A105300EE8836 /* SearchViewController.m */; };
 		59857D361D9A1B4300EE8836 /* SearchPreviewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59857D351D9A1B4300EE8836 /* SearchPreviewController.m */; };
 		59857D451D9A221900EE8836 /* SearchResultController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59857D441D9A221900EE8836 /* SearchResultController.m */; };
@@ -99,8 +105,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		59324B2F1D9D358D00101394 /* UserFeedbackController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFeedbackController.h; sourceTree = "<group>"; };
+		59324B301D9D358D00101394 /* UserFeedbackController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFeedbackController.m; sourceTree = "<group>"; };
+		59324B371D9D3F6F00101394 /* SatisfactionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SatisfactionController.h; sourceTree = "<group>"; };
+		59324B381D9D3F6F00101394 /* SatisfactionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SatisfactionController.m; sourceTree = "<group>"; };
 		594E3FC31D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UINavigationController+FDFullscreenPopGesture.h"; sourceTree = "<group>"; };
 		594E3FC41D9BE0550094E6C5 /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
+		595763C11D9D06930029A282 /* TMCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCache.h; sourceTree = "<group>"; };
+		595763C21D9D06930029A282 /* TMCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMCache.m; sourceTree = "<group>"; };
+		595763C31D9D06930029A282 /* TMCacheBackgroundTaskManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMCacheBackgroundTaskManager.h; sourceTree = "<group>"; };
+		595763C41D9D06930029A282 /* TMDiskCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMDiskCache.h; sourceTree = "<group>"; };
+		595763C51D9D06930029A282 /* TMDiskCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMDiskCache.m; sourceTree = "<group>"; };
+		595763C61D9D06930029A282 /* TMMemoryCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TMMemoryCache.h; sourceTree = "<group>"; };
+		595763C71D9D06930029A282 /* TMMemoryCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TMMemoryCache.m; sourceTree = "<group>"; };
+		595763CE1D9D11EC0029A282 /* UIView+ZCFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZCFrame.h"; sourceTree = "<group>"; };
+		595763CF1D9D11EC0029A282 /* UIView+ZCFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZCFrame.m"; sourceTree = "<group>"; };
 		59857D2B1D9A105300EE8836 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		59857D2C1D9A105300EE8836 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		59857D341D9A1B4300EE8836 /* SearchPreviewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchPreviewController.h; sourceTree = "<group>"; };
@@ -292,6 +311,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		59324B291D9D337900101394 /* MeController */ = {
+			isa = PBXGroup;
+			children = (
+				B026CB621D98C16C00B08509 /* MeViewController.h */,
+				B026CB631D98C16C00B08509 /* MeViewController.m */,
+				59857D541D9A9BF200EE8836 /* UserInfoController.h */,
+				59857D551D9A9BF200EE8836 /* UserInfoController.m */,
+				59857D561D9A9BF200EE8836 /* UserInfoController.xib */,
+				59324B2F1D9D358D00101394 /* UserFeedbackController.h */,
+				59324B301D9D358D00101394 /* UserFeedbackController.m */,
+				59324B371D9D3F6F00101394 /* SatisfactionController.h */,
+				59324B381D9D3F6F00101394 /* SatisfactionController.m */,
+			);
+			name = MeController;
+			sourceTree = "<group>";
+		};
 		594E3FC21D9BE0550094E6C5 /* FDFullscreenPopGesture */ = {
 			isa = PBXGroup;
 			children = (
@@ -301,9 +336,25 @@
 			path = FDFullscreenPopGesture;
 			sourceTree = "<group>";
 		};
+		595763C01D9D06930029A282 /* TMCache */ = {
+			isa = PBXGroup;
+			children = (
+				595763C11D9D06930029A282 /* TMCache.h */,
+				595763C21D9D06930029A282 /* TMCache.m */,
+				595763C31D9D06930029A282 /* TMCacheBackgroundTaskManager.h */,
+				595763C41D9D06930029A282 /* TMDiskCache.h */,
+				595763C51D9D06930029A282 /* TMDiskCache.m */,
+				595763C61D9D06930029A282 /* TMMemoryCache.h */,
+				595763C71D9D06930029A282 /* TMMemoryCache.m */,
+			);
+			path = TMCache;
+			sourceTree = "<group>";
+		};
 		59857D461D9A4A7600EE8836 /* category */ = {
 			isa = PBXGroup;
 			children = (
+				595763CE1D9D11EC0029A282 /* UIView+ZCFrame.h */,
+				595763CF1D9D11EC0029A282 /* UIView+ZCFrame.m */,
 				59857D511D9A4FEB00EE8836 /* MBProgressHUD+Manager.h */,
 				59857D521D9A4FEB00EE8836 /* MBProgressHUD+Manager.m */,
 			);
@@ -380,11 +431,7 @@
 				59857D351D9A1B4300EE8836 /* SearchPreviewController.m */,
 				59857D431D9A221900EE8836 /* SearchResultController.h */,
 				59857D441D9A221900EE8836 /* SearchResultController.m */,
-				B026CB621D98C16C00B08509 /* MeViewController.h */,
-				B026CB631D98C16C00B08509 /* MeViewController.m */,
-				59857D541D9A9BF200EE8836 /* UserInfoController.h */,
-				59857D551D9A9BF200EE8836 /* UserInfoController.m */,
-				59857D561D9A9BF200EE8836 /* UserInfoController.xib */,
+				59324B291D9D337900101394 /* MeController */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -461,6 +508,7 @@
 		B026CA8F1D97BC3900B08509 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				595763C01D9D06930029A282 /* TMCache */,
 				59F15AEF1D9CA79800583FCE /* SVProgressHUD */,
 				594E3FC21D9BE0550094E6C5 /* FDFullscreenPopGesture */,
 				59A2CFC31D9B5688001DD8F0 /* Masonry */,
@@ -768,6 +816,7 @@
 			files = (
 				B026CB031D97BC6D00B08509 /* MJRefreshAutoNormalFooter.m in Sources */,
 				622C4DC41D982BD200364A8E /* ClassViewController.m in Sources */,
+				59324B391D9D3F6F00101394 /* SatisfactionController.m in Sources */,
 				B026CAFE1D97BC6D00B08509 /* MJRefreshBackFooter.m in Sources */,
 				B026CB021D97BC6D00B08509 /* MJRefreshAutoGifFooter.m in Sources */,
 				622C4DBC1D980DA600364A8E /* ClassFlowView.m in Sources */,
@@ -791,6 +840,7 @@
 				B026CB181D97BC6D00B08509 /* SDWebImageDecoder.m in Sources */,
 				59857D2D1D9A105300EE8836 /* SearchViewController.m in Sources */,
 				59F15AFB1D9CA79800583FCE /* SVProgressAnimatedView.m in Sources */,
+				595763C81D9D06930029A282 /* TMCache.m in Sources */,
 				B026CB051D97BC6D00B08509 /* MJRefreshBackGifFooter.m in Sources */,
 				B026CB1B1D97BC6D00B08509 /* SDWebImageManager.m in Sources */,
 				B026CB771D99165500B08509 /* TitleViewCell.m in Sources */,
@@ -811,6 +861,7 @@
 				B026CB141D97BC6D00B08509 /* MKAnnotationView+WebCache.m in Sources */,
 				B026CB641D98C16C00B08509 /* MeViewController.m in Sources */,
 				B026CB1A1D97BC6D00B08509 /* SDWebImageDownloaderOperation.m in Sources */,
+				595763CA1D9D06930029A282 /* TMMemoryCache.m in Sources */,
 				B026CB081D97BC6D00B08509 /* MJRefreshGifHeader.m in Sources */,
 				59A2CFE31D9B5688001DD8F0 /* NSArray+MASAdditions.m in Sources */,
 				59A2CFE51D9B5688001DD8F0 /* View+MASAdditions.m in Sources */,
@@ -825,6 +876,7 @@
 				B026CB131D97BC6D00B08509 /* SDWaitingView.m in Sources */,
 				B026CA6C1D977C6A00B08509 /* main.m in Sources */,
 				B026CB041D97BC6D00B08509 /* MJRefreshAutoStateFooter.m in Sources */,
+				595763D01D9D11EC0029A282 /* UIView+ZCFrame.m in Sources */,
 				59F15AFE1D9CA79800583FCE /* SVRadialGradientLayer.m in Sources */,
 				B026CB201D97BC6D00B08509 /* UIImage+WebP.m in Sources */,
 				B026CB0A1D97BC6D00B08509 /* MJRefreshStateHeader.m in Sources */,
@@ -838,7 +890,9 @@
 				B026CB071D97BC6D00B08509 /* MJRefreshBackStateFooter.m in Sources */,
 				B026CAA11D97BC4900B08509 /* AFURLRequestSerialization.m in Sources */,
 				B026CAFD1D97BC6D00B08509 /* MJRefreshAutoFooter.m in Sources */,
+				59324B321D9D358D00101394 /* UserFeedbackController.m in Sources */,
 				59A2CFE61D9B5688001DD8F0 /* ViewController+MASAdditions.m in Sources */,
+				595763C91D9D06930029A282 /* TMDiskCache.m in Sources */,
 				B026CAA31D97BC4900B08509 /* AFURLSessionManager.m in Sources */,
 				B026CB291D97BD3E00B08509 /* CHTCollectionViewWaterfallLayout.m in Sources */,
 				B026CA9F1D97BC4900B08509 /* AFNetworkReachabilityManager.m in Sources */,

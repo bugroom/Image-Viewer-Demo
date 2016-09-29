@@ -14,7 +14,7 @@
 #import "PictureFlowCell.h"
 #import "AFNetworking.h"
 #include "MJRefresh.h"
-#import "MBProgressHUD+Manager.h"
+//#import "MBProgressHUD+Manager.h"
 #import "SVProgressHUD.h"
 
 @interface PictureFlowView ()<UICollectionViewDelegate,UICollectionViewDataSource,CHTCollectionViewDelegateWaterfallLayout,SDPhotoBrowserDelegate,UIScrollViewDelegate>
@@ -31,7 +31,7 @@
 
 @property (nonatomic,strong) NSMutableArray *dataSource;
 
-@property (nonatomic,weak)MBProgressHUD *hud;
+//@property (nonatomic,weak)MBProgressHUD *hud;
 
 @end
 @implementation PictureFlowView
@@ -96,14 +96,14 @@
     urlStr = [self stringEncoding:urlStr];
 
     if (!_currentPage) {
-        //[MBProgressHUD showHUDAddedTo:self animated:YES title:@"正在刷新" mode:MBProgressHUDModeIndeterminate];
+        
         [SVProgressHUD showWithStatus:@"正在刷新"];
     }
     
     [[AFHTTPSessionManager manager] GET:urlStr parameters:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         [_collectionView.mj_header endRefreshing];
         [_collectionView.mj_footer endRefreshing];
-        //[MBProgressHUD hideHUDForView:self animated:YES];
+        
         [SVProgressHUD dismiss];
         [self handleDataObjectWithReponseObject:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
@@ -116,7 +116,9 @@
 {
     if ([responseObject[@"res"][@"wallpaper"] count] < 1) {
         
-        [MBProgressHUD showHUDAddedTo:self animated:YES title:@"到底啦" mode:MBProgressHUDModeText andTimeInterval:0.8];
+        [SVProgressHUD setMinimumDismissTimeInterval:1];
+
+        [SVProgressHUD showInfoWithStatus:@"到底啦"];
        
     }
     
@@ -153,14 +155,6 @@
             
         }
         
-//        UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
-//        UIVisualEffectView *visuaEffectView = [[UIVisualEffectView alloc]initWithEffect:blurEffect];
-//        UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"backgroundView6"]];
-//        imageView.contentMode = UIViewContentModeScaleAspectFill;
-//        visuaEffectView.frame = imageView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 600);
-//        
-//        [imageView addSubview:visuaEffectView];
-//        collectionView.backgroundView = imageView;
         
         collectionView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
             _currentPage = 0;
@@ -316,13 +310,4 @@
     }
 }
 
--(MBProgressHUD *)hud
-{
-    if (!_hud) {
-        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self animated:YES];
-        hud.label.text = @"正在刷新";
-        _hud = hud;
-    }
-    return _hud;
-}
 @end

@@ -12,9 +12,9 @@
 #import "Config.h"
 #import "MeViewController.h"
 #import "SearchViewController.h"
-#import "MBProgressHUD.h"
 #import "UINavigationController+FDFullscreenPopGesture.h"
-@interface ViewController () <ZCScrollViewDelegate,UISearchBarDelegate,MBProgressHUDDelegate>
+#import "SVProgressHUD.h"
+@interface ViewController () <ZCScrollViewDelegate,UISearchBarDelegate>
 
 @property (nonatomic, strong) NSMutableArray *searchResultArray;
 
@@ -27,15 +27,7 @@
     [super loadView];
 
     self.fd_prefersNavigationBarHidden = NO;
-    
-    MBProgressHUD *hub = [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    hub.label.text = @"正在加载";
-    hub.delegate = self;
-    [hub hideAnimated:YES afterDelay:10];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [hub removeFromSuperview];
-    });
+
     
 }
 
@@ -54,6 +46,13 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [SVProgressHUD dismiss];
     
 }
 
@@ -86,7 +85,7 @@
 - (void)rightButtonItemClick
 {
     MeViewController *meVC = [[MeViewController alloc]init];
-    meVC.title = @"我的";
+    meVC.title = @"用户中心";
     [self.navigationController pushViewController:meVC animated:YES];
 }
 
@@ -137,5 +136,6 @@
 {
     NSLog(@"ViewController dealloc");
 }
+
 
 @end

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A319" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -8,9 +8,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="UserInfoController">
             <connections>
+                <outlet property="descHeight" destination="lVc-g4-GN6" id="nCM-ms-YrT"/>
+                <outlet property="descWidth" destination="yDE-mQ-UMY" id="5pQ-Ie-dJx"/>
+                <outlet property="descriptionTextView" destination="V2U-eZ-6Gz" id="i6w-i5-vKz"/>
                 <outlet property="headerImageButton" destination="x1n-bD-HbE" id="dbw-vD-l5Q"/>
+                <outlet property="morenLabel" destination="6c5-O4-1Dt" id="zLm-Tf-HrX"/>
                 <outlet property="saveButton" destination="Mfo-2N-M0I" id="gu3-to-B1f"/>
-                <outlet property="signatureTextField" destination="Ja1-kS-T9b" id="UF1-tx-BBo"/>
                 <outlet property="userNameTextField" destination="77p-Uk-ZgC" id="GBg-xq-2MW"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,22 +24,15 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurluan" translatesAutoresizingMaskIntoConstraints="NO" id="L4j-2L-zr0"/>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入用户名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="77p-Uk-ZgC">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入用户名" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="77p-Uk-ZgC">
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="275" id="sgI-w3-Efh"/>
+                    </constraints>
                     <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入个性签名" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ja1-kS-T9b">
-                    <nil key="textColor"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-2N-M0I">
-                    <state key="normal" title="保存"/>
-                    <connections>
-                        <action selector="saveButtonClick:" destination="-1" eventType="touchUpInside" id="IlY-bw-ecY"/>
-                    </connections>
-                </button>
                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x1n-bD-HbE">
                     <constraints>
                         <constraint firstAttribute="height" constant="150" id="86j-QW-Xrf"/>
@@ -47,23 +43,47 @@
                         <action selector="headerButtonClick:" destination="-1" eventType="touchUpInside" id="ctV-gg-oKe"/>
                     </connections>
                 </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="V2U-eZ-6Gz">
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="lVc-g4-GN6"/>
+                        <constraint firstAttribute="width" constant="275" id="yDE-mQ-UMY"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mfo-2N-M0I">
+                    <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="保存"/>
+                    <connections>
+                        <action selector="saveButtonClick:" destination="-1" eventType="touchUpInside" id="IlY-bw-ecY"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="请输入个人简介" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6c5-O4-1Dt">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="uoH-Re-RWK"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="77p-Uk-ZgC" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="0Dw-as-xlz"/>
                 <constraint firstItem="L4j-2L-zr0" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="0u3-nu-o8O"/>
-                <constraint firstAttribute="trailing" secondItem="77p-Uk-ZgC" secondAttribute="trailing" constant="16" id="8nA-fN-YHv"/>
                 <constraint firstItem="x1n-bD-HbE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="85" id="DIv-A8-ncq"/>
-                <constraint firstAttribute="trailing" secondItem="Ja1-kS-T9b" secondAttribute="trailing" constant="16" id="DhJ-jW-97l"/>
-                <constraint firstItem="Mfo-2N-M0I" firstAttribute="top" secondItem="Ja1-kS-T9b" secondAttribute="bottom" constant="32" id="GM5-fe-X2U"/>
-                <constraint firstAttribute="trailing" secondItem="Mfo-2N-M0I" secondAttribute="trailing" constant="165" id="MiT-j2-vvF"/>
+                <constraint firstItem="V2U-eZ-6Gz" firstAttribute="top" secondItem="77p-Uk-ZgC" secondAttribute="bottom" constant="24" id="H7R-fL-xjy"/>
+                <constraint firstItem="77p-Uk-ZgC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="IGN-Gh-FUM"/>
                 <constraint firstAttribute="bottom" secondItem="L4j-2L-zr0" secondAttribute="bottom" id="NYF-XW-q8R"/>
                 <constraint firstItem="x1n-bD-HbE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="RRC-ac-C1e"/>
-                <constraint firstItem="Ja1-kS-T9b" firstAttribute="top" secondItem="77p-Uk-ZgC" secondAttribute="bottom" constant="31" id="XOf-fT-TC4"/>
-                <constraint firstItem="Ja1-kS-T9b" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="XT2-Zy-6Nr"/>
+                <constraint firstItem="V2U-eZ-6Gz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="TUx-Hw-lz8"/>
+                <constraint firstItem="6c5-O4-1Dt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" constant="-43.5" id="WIt-vO-i9D"/>
                 <constraint firstItem="77p-Uk-ZgC" firstAttribute="top" secondItem="x1n-bD-HbE" secondAttribute="bottom" constant="41" id="bLX-ka-zKb"/>
                 <constraint firstItem="L4j-2L-zr0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="e4F-e9-DjL"/>
-                <constraint firstItem="Mfo-2N-M0I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="164" id="p4n-8F-JVo"/>
+                <constraint firstItem="Mfo-2N-M0I" firstAttribute="top" secondItem="V2U-eZ-6Gz" secondAttribute="bottom" constant="60" id="lzs-Je-O5k"/>
+                <constraint firstAttribute="trailing" secondItem="Mfo-2N-M0I" secondAttribute="trailing" constant="112" id="m4Z-pr-3PX"/>
+                <constraint firstItem="Mfo-2N-M0I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="104" id="sy1-aO-UK2"/>
+                <constraint firstItem="6c5-O4-1Dt" firstAttribute="top" secondItem="77p-Uk-ZgC" secondAttribute="bottom" constant="30" id="x9B-19-ZE4"/>
                 <constraint firstAttribute="trailing" secondItem="L4j-2L-zr0" secondAttribute="trailing" id="ziz-LC-mb1"/>
             </constraints>
             <point key="canvasLocation" x="-146.5" y="26.5"/>

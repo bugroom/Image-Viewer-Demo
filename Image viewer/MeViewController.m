@@ -13,6 +13,9 @@
 #import "UserInfoController.h"
 #import "Masonry.h"
 #import "MeUserInfoCell.h"
+#import "TMCache.h"
+#import "UserFeedbackController.h"
+#import "SatisfactionController.h"
 @interface MeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) UITableView *myTableView;
 
@@ -53,14 +56,28 @@
     [self updateHeaderInfo];
 }
 
+
 - (void)updateHeaderInfo
 {
     
-    NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"userImageData"];
-    if (data) {
-        self.headerView.myHeaderImageView.image = [UIImage imageWithData:data];
-    }else
-        self.headerView.myHeaderImageView.image = [UIImage imageWithData:data];
+    UIImage *image = [[TMCache sharedCache] objectForKey:@"headImage"];
+    if (image) {
+        self.headerView.myHeaderImageView.image = image;
+    }
+    
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] valueForKey:@"userImageData"];
+    if (dict) {
+        NSString *name = dict[@"userName"];
+        NSString *desc = dict[@"userDesc"];
+        if (name) {
+            self.headerView.userNameLabel.text = name;
+        }
+        if (desc.length > 0) {
+            self.headerView.introduceLabel.text = desc;
+        }
+        
+    }
+    
     
 }
 
@@ -155,6 +172,8 @@
             });
         });
     }
+    
+    
     if (indexPath.row == 4) {
         cell.detailTextLabel.text = @"v_1.0_Beta";
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -174,7 +193,14 @@
     if (indexPath.item == 1) {
         [[[UIAlertView alloc]initWithTitle:@"提示" message:@"清理历史搜索记录" delegate:self cancelButtonTitle:@"清理" otherButtonTitles:@"取消", nil] show];
      
-        
+    }
+    if (indexPath.row == 2) {
+        SatisfactionController *satisfactionController = [[SatisfactionController alloc]init];
+        [self.navigationController pushViewController:satisfactionController animated:YES];
+    }
+    if (indexPath.row == 3) {
+        UserFeedbackController *userFeedbackController = [[UserFeedbackController alloc]init];
+        [self.navigationController pushViewController:userFeedbackController animated:YES];
     }
 }
 

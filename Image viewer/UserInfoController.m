@@ -8,8 +8,14 @@
 
 #import "UserInfoController.h"
 #import "SVProgressHUD.h"
-@interface UserInfoController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIAlertViewDelegate>
-
+#import "TMCache.h"
+#import "UIView+ZCFrame.m"
+#import "Masonry.h"
+@interface UserInfoController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIAlertViewDelegate,UITextViewDelegate,UITextFieldDelegate>
+{
+    NSData *_headerImageData;
+    CGFloat _keyboardHeight;
+}
 @end
 
 @implementation UserInfoController
@@ -17,23 +23,69 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setUI];
+}
+
+
+- (void)setUI
+{
+    
     self.headerImageButton.layer.cornerRadius = 75;
     self.headerImageButton.backgroundColor = [UIColor clearColor];
-    NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:@"userImageData"];
-    [_headerImageButton setImage:[UIImage imageWithData:data] forState:UIControlStateNormal];
+    UIImage *image = [[TMCache sharedCache] objectForKey:@"headImage"];
+    if (image) {
+        [_headerImageButton setImage:image forState:UIControlStateNormal];
+    }
+
+    
+    
+    
+    NSDictionary *dict = [[NSUserDefaults standardUserDefaults] valueForKey:@"userImageData"];
+    if (dict) {
+        NSString *name = dict[@"userName"];
+        NSString *desc = dict[@"userDesc"];
+        if (name) {
+            self.userNameTextField.text = name;
+        }
+        if (desc.length > 0) {
+            self.descriptionTextView.text = desc;
+            self.morenLabel.hidden = YES;
+            self.descHeight.constant = [self sizeForText:desc].height + 10;
+        }
+
+    }
+    
+    
+    
+    self.descriptionTextView.delegate = self;
+    self.descriptionTextView.layer.cornerRadius = 5;
+    
+    self.userNameTextField.delegate =self;
+    
 }
+
+
+
 
 - (IBAction)saveButtonClick:(UIButton *)sender
 {
     if (self.userNameTextField.text.length > 0) {
-        //[[[UIAlertView alloc]initWithTitle:@"提醒" message:@"保存成功" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:nil, nil] show];
-        [SVProgressHUD setMinimumDismissTimeInterval:1.5];
-        [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+        
+        NSDictionary *dict = @{@"userName":_userNameTextField.text,@"userDesc":_descriptionTextView.text};
+        [[NSUserDefaults standardUserDefaults] setObject:dict forKey:@"userImageData"];
+        
+        [[TMCache sharedCache] setObject:self.headerImageButton.imageView.image forKey:@"headImage" block:^(TMCache *cache, NSString *key, id object) {
+            [SVProgressHUD setMinimumDismissTimeInterval:1.5];
+            [SVProgressHUD showSuccessWithStatus:@"保存成功"];
+        }];
+        
         [self.navigationController popViewControllerAnimated:YES];
+        
+        
        
     }
     else {
-        //[[[UIAlertView alloc]initWithTitle:@"提醒" message:@"用户名不能为空" delegate:nil cancelButtonTitle:@"返回" otherButtonTitles:nil, nil] show];
+        
         [SVProgressHUD setMinimumDismissTimeInterval:0.8];
         [SVProgressHUD showErrorWithStatus:@"用户名不能为空"];
         
@@ -144,7 +196,7 @@
         
         data = UIImagePNGRepresentation(editImage);
     }
-    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"userImageData"];
+    
     //修改头像
     [_headerImageButton setImage:editImage forState:UIControlStateNormal];
     
@@ -152,6 +204,44 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    
+    
+    self.descHeight.constant = [self sizeForText:textView.text].height + 10;
+    
+    
+    
+    
+    if ([text isEqualToString:@"\n"]) {
+        
+        [textView resignFirstResponder]; //［要实现的方法］
+        self.view.zcTop = 0;
+        return NO;
+        
+    }
+    if (textView.text.length > 0) {
+        self.morenLabel.hidden = YES;
+    }
+    else {self.morenLabel.hidden = NO;}
+    return YES;
+    
+}
+
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    self.view.zcTop = 0;
+    return YES;
+}
+
+- (CGSize)sizeForText:(NSString *)string
+{
+    return [string boundingRectWithSize:CGSizeMake(self.descWidth.constant - 10  , MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:17]} context:nil].size;
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
