@@ -107,6 +107,7 @@
         [SVProgressHUD dismiss];
         [self handleDataObjectWithReponseObject:responseObject];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        [SVProgressHUD dismiss];
         [[[UIAlertView alloc]initWithTitle:@"提示" message:@"网络错误" delegate:self cancelButtonTitle:@"返回" otherButtonTitles:@"刷新", nil] show];
     }];
     
@@ -168,6 +169,7 @@
         collectionView.backgroundColor = [UIColor whiteColor];
         [self addSubview:collectionView];
         _collectionView = collectionView;
+        
         
         
     }

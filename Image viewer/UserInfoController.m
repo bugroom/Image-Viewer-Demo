@@ -11,6 +11,7 @@
 #import "TMCache.h"
 #import "UIView+ZCFrame.m"
 #import "Masonry.h"
+
 @interface UserInfoController () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIAlertViewDelegate,UITextViewDelegate,UITextFieldDelegate>
 {
     NSData *_headerImageData;
@@ -24,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setUI];
+    
 }
 
 

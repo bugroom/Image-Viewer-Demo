@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MeAboutViewController">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blurbule" translatesAutoresizingMaskIntoConstraints="NO" id="PsW-tc-O0Z"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jiantuor.png" translatesAutoresizingMaskIntoConstraints="NO" id="A0B-5U-MT4">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="101" id="PAb-Z0-cN7"/>
+                        <constraint firstAttribute="width" constant="190" id="vZg-ED-mMA"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="everyDay" translatesAutoresizingMaskIntoConstraints="NO" id="Sxl-pU-32M">
+                    <constraints>
+                        <constraint firstAttribute="width" constant="292" id="IJA-TY-aEE"/>
+                        <constraint firstAttribute="height" constant="33" id="P64-7j-sJf"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="A0B-5U-MT4" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="5B7-ge-OQ5"/>
+                <constraint firstAttribute="trailing" secondItem="PsW-tc-O0Z" secondAttribute="trailing" id="F42-UI-3g6"/>
+                <constraint firstItem="Sxl-pU-32M" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="bB3-kG-Rmy"/>
+                <constraint firstItem="A0B-5U-MT4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="180" id="bgu-iN-JhA"/>
+                <constraint firstItem="Sxl-pU-32M" firstAttribute="top" secondItem="A0B-5U-MT4" secondAttribute="bottom" constant="36" id="mW0-O9-7f3"/>
+                <constraint firstItem="PsW-tc-O0Z" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="r0e-mJ-FbC"/>
+                <constraint firstItem="PsW-tc-O0Z" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="v7U-eo-ylJ"/>
+                <constraint firstAttribute="bottom" secondItem="PsW-tc-O0Z" secondAttribute="bottom" id="yJP-Em-4Tx"/>
+            </constraints>
+            <point key="canvasLocation" x="-320.5" y="47.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="blurbule" width="440" height="781"/>
+        <image name="everyDay" width="886" height="109"/>
+        <image name="jiantuor.png" width="212" height="90"/>
+    </resources>
+</document>

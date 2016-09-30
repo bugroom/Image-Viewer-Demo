@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LaunchScreen" id="01J-lp-oVM" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
                         <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
@@ -16,12 +17,43 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launchPicture" translatesAutoresizingMaskIntoConstraints="NO" id="c8d-bb-IhG"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jiantuor.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sqj-fN-oJf">
+                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="VDZ-o9-4cG"/>
+                                    <constraint firstAttribute="width" constant="90" id="rTZ-2q-ilf"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="everyDay.png" translatesAutoresizingMaskIntoConstraints="NO" id="GQf-dc-Dy1">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="274" id="3S8-AD-C18"/>
+                                    <constraint firstAttribute="height" constant="34" id="7t2-F5-4Ld"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="c8d-bb-IhG" secondAttribute="bottom" id="3Ek-Kd-IWg"/>
+                            <constraint firstItem="c8d-bb-IhG" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="-20" id="Ci7-aN-JgX"/>
+                            <constraint firstItem="GQf-dc-Dy1" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="E6X-qZ-j1H"/>
+                            <constraint firstItem="c8d-bb-IhG" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="HG8-l0-EXy"/>
+                            <constraint firstItem="Sqj-fN-oJf" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="120" id="HyX-co-zWc"/>
+                            <constraint firstItem="Sqj-fN-oJf" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="j6C-4i-Dtm"/>
+                            <constraint firstItem="GQf-dc-Dy1" firstAttribute="top" secondItem="Sqj-fN-oJf" secondAttribute="bottom" constant="30" id="j9v-8z-s54"/>
+                            <constraint firstAttribute="trailing" secondItem="c8d-bb-IhG" secondAttribute="trailing" id="zOM-ko-8Vp"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="192.80000000000001" y="215.44227886056973"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="everyDay.png" width="886" height="109"/>
+        <image name="jiantuor.png" width="212" height="90"/>
+        <image name="launchPicture" width="1600" height="1280"/>
+    </resources>
 </document>

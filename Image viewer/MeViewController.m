@@ -16,6 +16,9 @@
 #import "TMCache.h"
 #import "UserFeedbackController.h"
 #import "SatisfactionController.h"
+#import "SVProgressHUD.h"
+#import "MeAboutViewController.h"
+
 @interface MeViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, weak) UITableView *myTableView;
 
@@ -198,6 +201,13 @@
         UserFeedbackController *userFeedbackController = [[UserFeedbackController alloc]init];
         [self.navigationController pushViewController:userFeedbackController animated:YES];
     }
+    
+    if (indexPath.row == 5) {
+        MeAboutViewController *vc = [[MeAboutViewController alloc]init];
+        [self presentViewController:vc animated:YES completion:nil];
+        
+    }
+    
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
