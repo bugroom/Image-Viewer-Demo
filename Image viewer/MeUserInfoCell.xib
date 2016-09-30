@@ -16,7 +16,7 @@
                 <frame key="frameInset" width="413" height="125"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconHeade" translatesAutoresizingMaskIntoConstraints="NO" id="6rb-7n-qgE">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconHeade.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="6rb-7n-qgE">
                         <constraints>
                             <constraint firstAttribute="width" constant="80" id="Lhb-KS-TQP"/>
                             <constraint firstAttribute="height" constant="80" id="QWp-eD-b0m"/>
@@ -64,6 +64,6 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="iconHeade" width="181" height="180"/>
+        <image name="iconHeade.jpg" width="181" height="180"/>
     </resources>
 </document>

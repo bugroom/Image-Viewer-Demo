@@ -134,6 +134,5 @@ typedef void (^SVProgressHUDDismissCompletion)(void);
 
 + (NSTimeInterval)displayDurationForString:(NSString*)string;
 
-+ (SVProgressHUD*)sharedView;
 @end
 

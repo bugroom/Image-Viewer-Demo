@@ -26,14 +26,18 @@
 {
     [super loadView];
 
+    self.fd_prefersNavigationBarHidden = NO;
 
+    
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    // Do any additional setup after loading the view, typically from a nib.
     
     self.view.backgroundColor = [UIColor whiteColor];
+    //[self searchBar];
+    //[self searchBarController];
     [self creatBarButtonItem];
     [self zcScrollView];
     
@@ -71,6 +75,7 @@
 - (void)leftButtonItemClick
 {
 
+    //SearchViewController *searchViewController = [[SearchViewController alloc]initWithSearchText:[[NSUserDefaults standardUserDefaults] valueForKey:@"HotTitle"]];
     SearchViewController *searchViewController = [[SearchViewController alloc]init];
     searchViewController.title = @"搜索";
     [self.navigationController pushViewController:searchViewController animated:YES];

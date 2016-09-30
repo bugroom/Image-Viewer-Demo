@@ -171,7 +171,6 @@
         _collectionView = collectionView;
         
         
-        
     }
     return _collectionView;
 }
