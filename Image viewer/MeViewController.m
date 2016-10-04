@@ -177,7 +177,7 @@
     
     
     if (indexPath.row == 4) {
-        cell.detailTextLabel.text = @"v_1.0_Beta";
+        cell.detailTextLabel.text = @"1.0 ";
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
