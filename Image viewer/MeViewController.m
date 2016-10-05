@@ -48,7 +48,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _datasourceArray = @[@"清除缓存",@"删除历史搜索记录",@"满意度调查",@"意见反馈",@"当前版本",@"关于"];
+    _datasourceArray = @[@"清除缓存",@"删除历史搜索记录",@"满意度调查",@"意见反馈",@"关于"];
     [self myTableView];
     
 }
@@ -176,10 +176,10 @@
     }
     
     
-    if (indexPath.row == 4) {
-        cell.detailTextLabel.text = @"1.0 ";
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+//    if (indexPath.row == 4) {
+//        cell.detailTextLabel.text = @"1.0 ";
+//        cell.accessoryType = UITableViewCellAccessoryNone;
+//    }
     
     return cell;
 }
@@ -202,7 +202,7 @@
         [self.navigationController pushViewController:userFeedbackController animated:YES];
     }
     
-    if (indexPath.row == 5) {
+    if (indexPath.row == 4) {
         MeAboutViewController *vc = [[MeAboutViewController alloc]init];
         [self presentViewController:vc animated:YES completion:nil];
         
